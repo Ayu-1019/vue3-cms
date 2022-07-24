@@ -12,6 +12,7 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
+    // 配置路径别名
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]

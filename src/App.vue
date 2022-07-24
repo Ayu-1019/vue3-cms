@@ -7,12 +7,14 @@ export default defineComponent({
 </script>
 
 <template>
-  <div>123</div>
-  <router-link to="/login">登录</router-link>
-  <router-link to="/main">首页</router-link>
-  <router-view></router-view>
+  <div class="app">
+    <router-view></router-view>
+  </div>
 </template>
 
 <style lang="less" scoped>
-
+.app {
+  height: 100%;
+  width: 100%;
+}
 </style>
