@@ -3,7 +3,7 @@ import { defineComponent } from "@vue/runtime-core";
 
 export default defineComponent({
   setup() {
-    let size = '16px';
+
   }
 })
 </script>
@@ -19,7 +19,8 @@ export default defineComponent({
             <span>账号登录</span>
           </span>
         </template>
-        账号登录
+        账号：<el-input></el-input>
+        密码：<el-input></el-input>
       </el-tab-pane>
       <el-tab-pane>
         <template #label>
@@ -28,7 +29,8 @@ export default defineComponent({
             <span>手机登录</span>
           </span>
         </template>
-        手机登录
+        手机号：<el-input></el-input>
+        密码：<el-input></el-input>
       </el-tab-pane>
     </el-tabs>
   </div>
