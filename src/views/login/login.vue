@@ -1,17 +1,15 @@
 <script lang="ts">
-import { defineComponent } from '@vue/runtime-core'
-import LoginPanel from './child-cpns/login-panel.vue'
+import { defineComponent } from '@vue/runtime-core';
+import LoginPanel from './child-cpns/login-panel.vue';
 
 export default defineComponent({
   components: {
     LoginPanel
   },
   setup() {
-    return {
-
-    }
+    return {};
   }
-})
+});
 </script>
 
 <template>
@@ -27,6 +25,5 @@ export default defineComponent({
   align-items: center;
   width: 100%;
   height: 100%;
-
 }
 </style>
