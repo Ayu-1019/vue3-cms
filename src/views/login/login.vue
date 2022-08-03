@@ -1,15 +1,5 @@
-<script lang="ts">
-import { defineComponent } from '@vue/runtime-core';
+<script lang="ts" setup>
 import LoginPanel from './child-cpns/login-panel.vue';
-
-export default defineComponent({
-  components: {
-    LoginPanel
-  },
-  setup() {
-    return {};
-  }
-});
 </script>
 
 <template>

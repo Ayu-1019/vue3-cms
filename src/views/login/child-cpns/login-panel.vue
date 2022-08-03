@@ -1,30 +1,18 @@
-<script lang="ts">
-import { defineComponent } from '@vue/runtime-core';
+<script lang="ts" setup>
 import { storeToRefs } from 'pinia';
 
 import { useUserStore } from '@/store/modules/user';
 
-export default defineComponent({
-  setup() {
-    const userStore = useUserStore();
-    let { name, age } = storeToRefs(userStore);
+const userStore = useUserStore();
+let { name, age } = storeToRefs(userStore);
 
-    function clickFun(): void {
-      age.value++;
-    }
-    function clickFun2(): void {
-      userStore.changeUserAge();
-    }
+function clickFun(): void {
+  age.value++;
+}
 
-    return {
-      name,
-      age,
-      userStore,
-      clickFun,
-      clickFun2
-    };
-  }
-});
+function clickFun2(): void {
+  userStore.changeUserAge();
+}
 </script>
 
 <template>
