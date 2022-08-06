@@ -22,6 +22,7 @@ const stopWatch = watchEffect(() => {
 <template>
   <h2>counter: {{ counter }}</h2>
   <button @click="counterAdd">点击</button>
+  <h2>test</h2>
 </template>
 
 <style lang="less" scoped>
