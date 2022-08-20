@@ -1,10 +1,25 @@
 <script lang="ts" setup>
+import useCount from '@/store/count'
 import { ref, watchEffect } from '@vue/runtime-core';
 
 let counter = ref(0);
 
 function counterAdd() {
   counter.value++;
+}
+
+const countStore = useCount();
+
+const onClick = () => {
+  countStore.count++
+}
+
+const resetCount = () => {
+  countStore.$reset()
+}
+
+const action = () => {
+  countStore.increment(10)
 }
 
 // 返回值为一个函数 执行就会停止监听
@@ -22,7 +37,16 @@ const stopWatch = watchEffect(() => {
 <template>
   <h2>counter: {{ counter }}</h2>
   <button @click="counterAdd">点击</button>
-  <h2>test</h2>
+  <hr>
+  <h2>pinia count {{ countStore.count }}</h2>
+  <button @click="onClick">+ 1</button>
+  <button @click="resetCount">重置</button>
+  <hr>
+  <div>getter-doubleCount: {{ countStore.doubleCount }}</div>
+  <div>getter-doubleAddOne: {{ countStore.doubleAddOne }}</div>
+  <hr>
+  <div>{{ countStore.count }}</div>
+  <button @click="action">+ 10</button>
 </template>
 
 <style lang="less" scoped>
