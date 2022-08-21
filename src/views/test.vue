@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import useCount from '@/store/count'
+import useCount from '@/store/count';
 import { ref, watchEffect } from '@vue/runtime-core';
 
 let counter = ref(0);
@@ -11,16 +11,23 @@ function counterAdd() {
 const countStore = useCount();
 
 const onClick = () => {
-  countStore.count++
-}
+  countStore.count++;
+};
 
 const resetCount = () => {
-  countStore.$reset()
-}
+  countStore.$reset();
+};
+
+const patchCount = () => {
+  countStore.$patch({
+    count: 666,
+    user: 'alive'
+  });
+};
 
 const action = () => {
-  countStore.increment(10)
-}
+  countStore.increment(10);
+};
 
 // 返回值为一个函数 执行就会停止监听
 const stopWatch = watchEffect(() => {
@@ -37,18 +44,20 @@ const stopWatch = watchEffect(() => {
 <template>
   <h2>counter: {{ counter }}</h2>
   <button @click="counterAdd">点击</button>
-  <hr>
+  <hr />
   <h2>pinia count {{ countStore.count }}</h2>
   <button @click="onClick">+ 1</button>
   <button @click="resetCount">重置</button>
-  <hr>
+  <div>
+    {{ countStore.user ? 'YES' : 'NO' }}
+  </div>
+  <button @click="patchCount">patch</button>
+  <hr />
   <div>getter-doubleCount: {{ countStore.doubleCount }}</div>
   <div>getter-doubleAddOne: {{ countStore.doubleAddOne }}</div>
-  <hr>
+  <hr />
   <div>{{ countStore.count }}</div>
   <button @click="action">+ 10</button>
 </template>
 
-<style lang="less" scoped>
-</style>
-
+<style lang="less" scoped></style>
