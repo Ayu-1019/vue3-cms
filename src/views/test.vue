@@ -31,7 +31,7 @@ const action = () => {
 
 // 返回值为一个函数 执行就会停止监听
 const stopWatch = watchEffect(() => {
-  // 自动收集响应式数据
+  // 自动收集响应式数据 数据改变 -> 执行
   console.log('watchEffecr被执行');
   console.log(counter.value);
 
