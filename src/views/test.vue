@@ -25,6 +25,8 @@ const patchCount = () => {
   });
 };
 
+console.log('test');
+
 const action = () => {
   countStore.increment(10);
 };
